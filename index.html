@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;550;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+</head>
+<body>
+<div id="weather-app">
+    <h1 id="weather-title">Looking outside...</h1>
+    <form id="city-form">
+        <div class="input-wrapper">
+            <input type="text" id="city-input" placeholder="Enter city name" required>
+        </div>
+        <button type="submit">Get Weather</button>
+    </form>
+    <div id="weather-info">
+        <h2 id="city-name"></h2>
+        <p>Temperature: <span id="temperature"></span>°C</p>
+        <p>Condition: <span id="condition"></span></p>
+        <p>Humidity: <span id="humidity"></span>%</p>
+        <p>Wind Speed: <span id="wind-speed"></span> km/h</p>
+    </div>
+</div>
+
+<div id="loading-screen">
+    <div class="spinner"></div>
+    <p id="loading-quote">Checking the clouds...</p>
+</div>
+
+<img class="dock-layer" id="dock-1" src="assets/ui-container-01.png" alt="">
+<img class="dock-layer" id="dock-2" src="assets/ui-container-02.png" alt="">
+<img class="dock-layer" id="dock-3" src="assets/ui-container-03.png" alt="">
+<img class="dock-layer" id="dock-4" src="assets/ui-container-04.png" alt="">
+
+<div class="weather-face">
+    <div class="eye left-eye"><div class="pupil"></div></div>
+    <div class="eye right-eye"><div class="pupil"></div></div>
+    <div class="mouth"></div>
+</div>
+
+<div class="weather-bg">
+    <img src="assets/cloudy.svg" alt="Animated Cloud Background">
+</div>
+
+<script src="animation.js"></script>
+<script src="loading.js"></script>
+<script src="weatherMood.js"></script>
+
+</body>
+</html>
