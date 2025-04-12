@@ -1,0 +1,67 @@
+body {
+    /* will change dynamically */
+    background-color: #a1cbff; 
+}
+
+#weather-app {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#weather-app h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+}
+
+#weather-app p {
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+}
+
+#city-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#city-form input {
+    width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    outline: none;
+    margin-bottom: 10px;
+    background-color: #f5f5f5;
+    color: #232323;
+    padding: 20px 20px;
+}
+
+#city-form button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #1a73e8;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#dock-bg {
+    position: fixed;
+    bottom: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1920px;
+    height: auto;
+    z-index: -1;
+    pointer-events: none;
+}

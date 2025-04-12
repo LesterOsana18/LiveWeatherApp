@@ -4,8 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Live Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+<div id="weather-app">
+    <h1>Live Weather App</h1>
+    <form id="city-form">
+        <input type="text" id="city-input" placeholder="Enter city name" required>
+        <button type="submit">Get Weather</button>
+    </form>
+    <div id="weather-info">
+        <h2 id="city-name"></h2>
+        <p>Temperature: <span id="temperature"></span>°C</p>
+        <p>Condition: <span id="condition"></span></p>
+        <p>Humidity: <span id="humidity"></span>%</p>
+        <p>Wind Speed: <span id="wind-speed"></span> km/h</p>
+    </div>
+</div>
+<img id="dock-bg" src="assets/ui-container-01.png" alt="Dock Background">
 
 </body>
 </html>
