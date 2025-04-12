@@ -1,13 +1,14 @@
 function updateWeatherTitleRandom() {
     const titleEl = document.getElementById("weather-title");
     const body = document.body;
+    const weatherImage = document.querySelector(".weather-bg img");
 
-    if (!titleEl || !body) return;
+    if (!titleEl || !body || !weatherImage) return;
 
     const randomMoods = [
         "a bright and sunny day ☀️",
         "a bit cloudy ☁️",
-        "stormin’ out there ⚡",
+        "stormin' out there ⚡",
         "snowing like a snow globe ❄️",
         "light drizzle 🌦️",
         "foggy and mysterious 🌁",
@@ -23,31 +24,52 @@ function updateWeatherTitleRandom() {
     ];
 
     const gradients = [
-        "linear-gradient(to top, #57c1eb, #246fa8)",           // sunny (sky blue to deep blue)
-        "linear-gradient(to top, #4b6cb7, #182848)",           // cloudy (moody blue/gray)
-        "linear-gradient(to top, #1e130c, #9a8478)",           // stormy (deep dark brown-gray)
-        "linear-gradient(to top, #b6fbff, #83a4d4)",           // snowy (icy blue, not white)
-        "linear-gradient(to top, #3a6073, #16222a)",           // drizzle (dusky blue)
-        "linear-gradient(to top, #3e5151, #decba4)",           // foggy (muted gray/brown blend)
-        "linear-gradient(to top, #7b4397, #dc2430)",           // rainbow-chasing (sunsety, bold)
-        "linear-gradient(to top, #00c6ff, #0072ff)",           // windy (bold blue tones)
-        "linear-gradient(to top, #e100ff, #7f00ff)",           // hot (neon heat, purple-red)
-        "linear-gradient(to top, #43cea2, #185a9d)",           // vibey (cool aqua to deep teal)
-        "linear-gradient(to top, #f7971e, #ffd200)",           // shades (bold sunshine yellow-orange)
-        "linear-gradient(to top, #485563, #29323c)",           // sass (moody & edgy)
-        "linear-gradient(to top, #1c92d2, #f2fcfe)",           // umbrella (rainy blue)
-        "linear-gradient(to top, #00d2ff, #3a7bd5)",           // breezy (bright clear blue)
-        "linear-gradient(to top, #a18cd1, #fbc2eb)"            // sunny-vibes (pastel bold)
+        "linear-gradient(to top, #57c1eb, #246fa8)",
+        "linear-gradient(to top, #4b6cb7, #182848)",
+        "linear-gradient(to top, #1e130c, #9a8478)",
+        "linear-gradient(to top, #b6fbff, #83a4d4)",
+        "linear-gradient(to top, #3a6073, #16222a)",
+        "linear-gradient(to top, #3e5151, #decba4)",
+        "linear-gradient(to top, #7b4397, #dc2430)",
+        "linear-gradient(to top, #00c6ff, #0072ff)",
+        "linear-gradient(to top, #e100ff, #7f00ff)",
+        "linear-gradient(to top, #43cea2, #185a9d)",
+        "linear-gradient(to top,rgb(255, 140, 0),rgb(255, 128, 0))",
+        "linear-gradient(to top, #485563, #29323c)",
+        "linear-gradient(to top, #1c92d2, #f2fcfe)",
+        "linear-gradient(to top, #00d2ff, #3a7bd5)",
+        "linear-gradient(to top, #a18cd1, #fbc2eb)"
+    ];
+
+    const weatherAssets = [
+        { file: "sunny.svg", scale: 13 },
+        { file: "cloudy.svg", scale: 10 },
+        { file: "thunder.svg", scale: 8 },
+        { file: "snowy.svg", scale: 8 },
+        { file: "rainy-sunny.svg", scale: 9 },
+        { file: "cloudy.svg", scale: 9.5 },
+        { file: "sunny.svg", scale: 13 },
+        { file: "cloudy.svg", scale: 10 },
+        { file: "sunny.svg", scale: 12 },
+        { file: "cloudy-sunny.svg", scale: 9.5 },
+        { file: "sunny.svg", scale: 13 },
+        { file: "cloudy.svg", scale: 10 },
+        { file: "rainy.svg", scale: 9 },
+        { file: "cloudy-sunny.svg", scale: 9.5 },
+        { file: "sunny.svg", scale: 13 }
     ];
 
     const index = Math.floor(Math.random() * randomMoods.length);
     const mood = randomMoods[index];
-    const gradient = gradients[index] || "linear-gradient(to top, #a1cbff, #c2e9fb)";
+    const gradient = gradients[index];
+    const asset = weatherAssets[index];
 
     titleEl.textContent = `It's ${mood}`;
     body.style.backgroundImage = gradient;
     body.style.backgroundSize = "cover";
     body.style.backgroundRepeat = "no-repeat";
+    weatherImage.src = `assets/${asset.file}`;
+    weatherImage.style.transform = `scale(${asset.scale})`;
 }
 
 window.updateWeatherTitle = updateWeatherTitleRandom;
