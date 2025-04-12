@@ -6,6 +6,7 @@
     <title>Live Weather App</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
 </head>
 <body>
 <div id="weather-app">
@@ -23,12 +24,17 @@
     </div>
 </div>
 
+<div id="loading-screen">
+    <div class="spinner"></div>
+    <p id="loading-quote">Checking the clouds...</p>
+</div>
+
 <img class="dock-layer" id="dock-1" src="assets/ui-container-01.png" alt="">
 <img class="dock-layer" id="dock-2" src="assets/ui-container-02.png" alt="">
 <img class="dock-layer" id="dock-3" src="assets/ui-container-03.png" alt="">
 <img class="dock-layer" id="dock-4" src="assets/ui-container-04.png" alt="">
 
 <script src="animation.js"></script>
+<script src="loading.js"></script>
 </body>
 </html>
-

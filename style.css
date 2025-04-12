@@ -11,7 +11,7 @@ body {
 }
 
 #weather-app h1 {
-    font-size: 48px;
+    font-size: 58px;
     margin-bottom: 10px;
     font-weight: 700;
     font-family: 'Oswald', sans-serif;
@@ -71,3 +71,64 @@ body {
 #dock-2 { opacity: 0.5; }
 #dock-3 { opacity: 0.5; }
 #dock-4 { opacity: 0.5; }
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #a1cbff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 2s ease;
+}
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #a1cbff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+#loading-screen.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.spinner {
+    width: 100px;
+    height: 100px;
+    border: 20px solid white;
+    border-top-color: #fffb00;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    }
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#loading-quote {
+    margin-top: 20px;
+    font-size: 36px;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: bold;
+    color: #000; /* black text */
+    text-align: center;
+    max-width: 80%;
+    line-height: 1.4;
+}
+
