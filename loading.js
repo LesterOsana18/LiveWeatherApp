@@ -28,5 +28,5 @@ window.addEventListener("load", () => {
         setTimeout(() => {
             loader.remove();
         }, 500);
-    }, 4000);
+    }, 2000);
 });
