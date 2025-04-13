@@ -75,4 +75,61 @@ function updateWeatherTitleRandom() {
 window.updateWeatherTitle = updateWeatherTitleRandom;
 updateWeatherTitle();
 
+// Function to update the weather visuals based on the condition
+// This function is called after fetching the weather data from the API
+function updateVisualsBasedOnWeather(condition) {
+    const body = document.body;
+    const weatherImage = document.querySelector(".weather-bg img");
+    const titleEl = document.getElementById("weather-title");
+    
+    let mood = "";
+    let gradient = "";
+    let asset = "";
+    
+    switch (condition.toLowerCase()) {
+        case "clear":
+            mood = "a bright and sunny day ☀️";
+            gradient = "linear-gradient(to top, #57c1eb, #246fa8)";
+            asset = "sunny.svg";
+            break;
+        case "clouds":
+            mood = "a bit cloudy ☁️";
+            gradient = "linear-gradient(to top, #4b6cb7, #182848)";
+            asset = "cloudy.svg";
+            break;
+        case "rain":
+            mood = "light drizzle 🌧️";
+            gradient = "linear-gradient(to top, #3e5151, #decba4)";
+            asset = "rainy.svg";
+            break;
+        case "thunderstorm":
+            mood = "stormin' out there ⚡";
+            gradient = "linear-gradient(to top, #1e130c, #9a8478)";
+            asset = "thunder.svg";
+            break;
+        case "snow":
+            mood = "snowing like a snow globe ❄️";
+            gradient = "linear-gradient(to top, #b6fbff, #83a4d4)";
+            asset = "snowy.svg";
+            break;
+        default:
+            mood = "a sky full of vibes 🌀";
+            gradient = "linear-gradient(to top, #43cea2, #185a9d)";
+            asset = "cloudy-sunny.svg";
+    }
+    
+    titleEl.textContent = `It's ${mood}`;
+    body.style.backgroundImage = gradient;
+    weatherImage.src = `assets/${asset}`;
+}
+
+// Function to display the weather information
+function updateWeatherInfo(data) {
+    document.getElementById("weather-title").textContent = `It's currently ${data.weather[0].description} in ${data.name}`;
+    document.getElementById("temperature").textContent = `${data.main.temp}°C`;
+    document.getElementById("condition").textContent = data.weather[0].main;
+    document.getElementById("humidity").textContent = `${data.main.humidity}%`;
+    document.getElementById("wind-speed").textContent = `${data.wind.speed} m/s`;
+}
+
 document.getElementById('weather-info').classList.add('visible');
