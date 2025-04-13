@@ -1,8 +1,11 @@
+// Weather API integration
 const API_KEY = 'd545b937f777bf890e57bf8ff9106233';
 
+// Function to fetch weather data from OpenWeatherMap API
 function fetchWeatherData(city) {
 const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${API_KEY}&units=metric`;
 
+// Fetch weather data from the API
 fetch(url)
 .then(response => {
     if (!response.ok) throw new Error("City not found");
@@ -19,6 +22,7 @@ fetch(url)
 });
 }
 
+// Event listener for form submission
 document.addEventListener("DOMContentLoaded", () => {
 document.getElementById("city-form").addEventListener("submit", function (e) {
     e.preventDefault();
@@ -29,6 +33,7 @@ document.getElementById("city-form").addEventListener("submit", function (e) {
 });
 });
 
+// Function to update the weather visuals based on the condition
 function updateWeatherInfo(data) {
     document.getElementById("city-name").textContent = data.name;
     document.getElementById("temperature").textContent = data.main.temp;
@@ -44,6 +49,7 @@ function updateWeatherInfo(data) {
     document.querySelector("#wind-card .weather-card-unit").textContent = "m/s";
 }
 
+// Function to update the visuals based on the weather condition
 function showWeatherInfo() {
     document.getElementById("weather-info").classList.remove("hidden");
     document.getElementById("weather-info").classList.add("visible");

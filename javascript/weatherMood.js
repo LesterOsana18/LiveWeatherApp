@@ -75,6 +75,8 @@ function updateWeatherTitleRandom() {
 window.updateWeatherTitle = updateWeatherTitleRandom;
 updateWeatherTitle();
 
+// Function to update the weather visuals based on the condition
+// This function is called after fetching the weather data from the API
 function updateVisualsBasedOnWeather(condition) {
     const body = document.body;
     const weatherImage = document.querySelector(".weather-bg img");
@@ -121,6 +123,7 @@ function updateVisualsBasedOnWeather(condition) {
     weatherImage.src = `assets/${asset}`;
 }
 
+// Function to display the weather information
 function updateWeatherInfo(data) {
     document.getElementById("weather-title").textContent = `It's currently ${data.weather[0].description} in ${data.name}`;
     document.getElementById("temperature").textContent = `${data.main.temp}°C`;
