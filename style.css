@@ -9,13 +9,14 @@ html, body {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    width: 100vw;
     z-index: 100;
 }
 
 #weather-app h1 {
     width: 100%;
-    font-size: 60px;
-    margin-bottom: 10px;
+    font-size: 55px;
+    margin-bottom: 40px;
     font-weight: 550;
     font-family: 'Fredoka', sans-serif;
     text-align: center;
@@ -61,8 +62,8 @@ html, body {
 }
 
 #city-form input.expanded {
-    width: 500px;
-    transform: scale(1.3);
+    width: 100vw;
+    transform: scale(1.1);
 }
 
 #city-form button[type="submit"] {
@@ -174,29 +175,26 @@ html, body {
     height: 20px;
     background: #000000;
     border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-    scale: 1.5;
 }
 
 .left-eye {
     top: 50px;
     left: 50px;
-    transform: rotate(0deg);
 }
 
 .right-eye {
     top: 50px;
     right: 50px;
-    transform: rotate(0deg);
 }
 
 .mouth {
     position: absolute;
-    bottom: 90px;
+    bottom: 108px;
     left: 50%;
     transform: translateX(-50%) rotate(0deg);
-    width: 35px;
-    height: 18px;
-    border: 8px solid #000000;
+    width: 25px;
+    height: 11px;
+    border: 7px solid #000000;
     border-top: none;
     border-radius: 0 0 50px 50px;
     background: transparent;
