@@ -20,10 +20,38 @@
     </form>
     <div id="weather-info">
         <h2 id="city-name"></h2>
-        <p>Temperature: <span id="temperature"></span>°C</p>
-        <p>Condition: <span id="condition"></span></p>
-        <p>Humidity: <span id="humidity"></span>%</p>
-        <p>Wind Speed: <span id="wind-speed"></span> km/h</p>
+        
+        <div class="weather-card" id="temperature-card">
+            <div class="weather-card-icon">
+                <img src="assets/temperature.png" alt="Temperature Icon" class="icon-image">
+            </div>
+            <p class="weather-card-label">Temperature</p>
+            <p class="weather-card-value"><span id="temperature"></span><span class="weather-card-unit">?</span></p>
+        </div>
+        
+        <div class="weather-card" id="condition-card">
+            <div class="weather-card-icon">
+                <img src="assets/condition.png" alt="Condition Icon" class="icon-image">
+            </div>
+            <p class="weather-card-label">Condition</p>
+            <p class="weather-card-value"><span id="condition"></span><span class="weather-card-unit">?</span></p>
+        </div>
+        
+        <div class="weather-card" id="humidity-card">
+            <div class="weather-card-icon">
+                <img src="assets/humidity.png" alt="Humidity Icon" class="icon-image">
+            </div>
+            <p class="weather-card-label">Humidity</p>
+            <p class="weather-card-value"><span id="humidity"></span><span class="weather-card-unit">?</span></p>
+        </div>
+        
+        <div class="weather-card" id="wind-card">
+            <div class="weather-card-icon">
+                <img src="assets/wind speed.png" alt="Wind Speed Icon" class="icon-image">
+            </div>
+            <p class="weather-card-label">Wind Speed</p>
+            <p class="weather-card-value"><span id="wind-speed"></span><span class="weather-card-unit">?</span></p>
+        </div>
     </div>
 </div>
 

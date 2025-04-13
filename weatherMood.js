@@ -74,3 +74,5 @@ function updateWeatherTitleRandom() {
 
 window.updateWeatherTitle = updateWeatherTitleRandom;
 updateWeatherTitle();
+
+document.getElementById('weather-info').classList.add('visible');

@@ -36,6 +36,7 @@ html, body {
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    margin-bottom: -20px;
 }
 
 .input-wrapper {
@@ -62,7 +63,7 @@ html, body {
 }
 
 #city-form input.expanded {
-    width: 100vw;
+    width: 70vw;
     transform: scale(1.1);
 }
 
@@ -75,10 +76,122 @@ html, body {
     cursor: pointer;
     font-size: 18px;
     font-family: 'Fredoka', sans-serif;
+    transition: transform 0.5s ease;
+}
+
+#city-form button[type="submit"]:hover {
+    background-color: #ffffff;
+    color:#1a73e8;
+    transform: scale(1.1);
+}
+
+#city-form button[type="submit"]:not(:hover) {
+    transform: scale(1);
 }
 
 #weather-info {
-    margin-bottom: 30px;
+    max-width: 80vw;
+    margin: 0 auto 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+#weather-info.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#city-name {
+    width: 100%;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-shadow: 3px 3px 0 #000000;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 550;
+}
+
+.weather-card {
+    background: rgba(255, 255, 255);
+    border-radius: 12px;
+    padding: 12px 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    min-width: 120px;
+    flex: 0 0 auto;
+    max-width: 180px;
+    height: 125px;
+}
+
+@media screen and (max-width: 860px) {
+    .weather-card {
+        height: 62.5px;
+    }
+
+    .weather-card-icon {
+        height: 25px;
+    }
+
+    .weather-card-label {
+        display: none;
+    }
+
+    .weather-card-value {
+        font-size: 21px;
+    }
+}
+
+.weather-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+    background-color: #f3ffb5;
+}
+
+.weather-card-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+}
+
+.icon-image {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+.weather-card-label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 4px;
+    font-family: 'Fredoka', sans-serif;
+    text-align: center;
+}
+
+.weather-card-value {
+    font-size: 22px;
+    font-weight: 700;
+    color: #232323;
+    font-family: 'Fredoka', sans-serif;
+    margin: 0;
+    text-align: center;
+}
+
+.weather-card-unit {
+    font-size: 16px;
+    font-weight: 400;
+    color: #555;
+    margin-left: 2px;
 }
 
 .dock-layer {
@@ -258,3 +371,4 @@ html, body {
     align-items: center;
     justify-content: center;
 }
+
