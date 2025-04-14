@@ -50,7 +50,7 @@ function updateWeatherTitleRandom() {
         { file: "cloudy.svg", scale: 9.5 },
         { file: "sunny.svg", scale: 13 },
         { file: "cloudy.svg", scale: 10 },
-        { file: "sunny.svg", scale: 12 },
+        { file: "sunny.svg", scale: 13 },
         { file: "cloudy-sunny.svg", scale: 9.5 },
         { file: "sunny.svg", scale: 13 },
         { file: "cloudy.svg", scale: 10 },
@@ -90,37 +90,38 @@ function updateVisualsBasedOnWeather(condition) {
         case "clear":
             mood = "a bright and sunny day ☀️";
             gradient = "linear-gradient(to top, #57c1eb, #246fa8)";
-            asset = "sunny.svg";
+            asset = { file: "sunny.svg", scale: 13 };
             break;
         case "clouds":
             mood = "a bit cloudy ☁️";
             gradient = "linear-gradient(to top, #4b6cb7, #182848)";
-            asset = "cloudy.svg";
+            asset = { file: "cloudy.svg", scale: 10 };
             break;
         case "rain":
             mood = "light drizzle 🌧️";
             gradient = "linear-gradient(to top, #3e5151, #decba4)";
-            asset = "rainy.svg";
+            asset = { file: "rainy.svg", scale: 9 };
             break;
         case "thunderstorm":
             mood = "stormin' out there ⚡";
             gradient = "linear-gradient(to top, #1e130c, #9a8478)";
-            asset = "thunder.svg";
+            asset = { file: "thunder.svg", scale: 8 };
             break;
         case "snow":
             mood = "snowing like a snow globe ❄️";
             gradient = "linear-gradient(to top, #b6fbff, #83a4d4)";
-            asset = "snowy.svg";
+            asset = { file: "snowy.svg", scale: 8 };
             break;
         default:
             mood = "a sky full of vibes 🌀";
             gradient = "linear-gradient(to top, #43cea2, #185a9d)";
-            asset = "cloudy-sunny.svg";
+            asset = { file: "cloudy-sunny.svg", scale: 9.5 };
     }
     
     titleEl.textContent = `It's ${mood}`;
     body.style.backgroundImage = gradient;
-    weatherImage.src = `assets/${asset}`;
+    weatherImage.src = `assets/${asset.file}`;
+    weatherImage.style.transform = `scale(${asset.scale})`;
 }
 
 // Function to display the weather information
