@@ -14,7 +14,10 @@
     <h1 id="weather-title">Looking outside...</h1>
     <form id="city-form">
         <div class="input-wrapper">
-            <input type="text" id="city-input" placeholder="Enter city name" required>
+            <div class="autocomplete-container">
+                <input type="text" id="city-input" placeholder="Enter city name" required autocomplete="off">
+                <ul id="suggestions"></ul>
+            </div>
         </div>
         <button type="submit">Get Weather</button>
     </form>
@@ -79,6 +82,7 @@
 <script src="/javascript/loading.js"></script>
 <script src="/javascript/weatherAPI.js"></script>
 <script src="/javascript/weatherMood.js"></script>
+<script src="/javascript/autoComplete.js"></script>
 
 </body>
 </html>
